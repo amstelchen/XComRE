@@ -1,0 +1,436 @@
+
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>Game Files - UFOpaedia</title>
+<script>document.documentElement.className="client-js";RLCONF={"wgBreakFrames":!1,"wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgRequestId":"11e1bd0138c01d03fe6353ad","wgCSPNonce":!1,"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":!1,"wgNamespaceNumber":0,"wgPageName":"Game_Files","wgTitle":"Game Files","wgCurRevisionId":71519,"wgRevisionId":71519,"wgArticleId":1025,"wgIsArticle":!0,"wgIsRedirect":!1,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Game Files","Enemy Unknown/UFO Defense","TFTD"],"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgRelevantPageName":"Game_Files","wgRelevantArticleId":1025,"wgIsProbablyEditable":!1,"wgRelevantPageIsProbablyEditable":!1,"wgRestrictionEdit":[],"wgRestrictionMove":[]};RLSTATE={"site.styles":"ready",
+"noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","skins.vector.styles.legacy":"ready","mediawiki.toc.styles":"ready"};RLPAGEMODULES=["site","mediawiki.page.startup","mediawiki.page.ready","mediawiki.toc","skins.vector.legacy.js"];</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.loader.implement("user.options@1hzgi",function($,jQuery,require,module){/*@nomin*/mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});
+});});</script>
+<link rel="stylesheet" href="/load.php?lang=en&amp;modules=mediawiki.toc.styles%7Cskins.vector.styles.legacy&amp;only=styles&amp;skin=vector"/>
+<script async="" src="/load.php?lang=en&amp;modules=startup&amp;only=scripts&amp;raw=1&amp;skin=vector"></script>
+<meta name="generator" content="MediaWiki 1.35.4"/>
+<link rel="shortcut icon" href="https://www.ufopaedia.org/favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="UFOpaedia (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="https://www.ufopaedia.org/api.php?action=rsd"/>
+<link rel="alternate" type="application/atom+xml" title="UFOpaedia Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.js"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Game_Files rootpage-Game_Files skin-vector action-view skin-vector-legacy">
+<div id="mw-page-base" class="noprint"></div>
+<div id="mw-head-base" class="noprint"></div>
+<div id="content" class="mw-body" role="main">
+	<a id="top"></a>
+	<div id="siteNotice" class="mw-body-content"></div>
+	<div class="mw-indicators mw-body-content">
+	</div>
+	<h1 id="firstHeading" class="firstHeading" lang="en">Game Files</h1>
+	<div id="bodyContent" class="mw-body-content">
+		<div id="siteSub" class="noprint">From UFOpaedia</div>
+		<div id="contentSub"></div>
+		<div id="contentSub2"></div>
+		
+		<div id="jump-to-nav"></div>
+		<a class="mw-jump-link" href="#mw-head">Jump to navigation</a>
+		<a class="mw-jump-link" href="#searchInput">Jump to search</a>
+		<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="mw-parser-output"><p>Not-for-profit, just-for-fun reverse engineering.
+</p>
+<ul><li>General note re: <a href="/index.php/HackerTools" title="HackerTools">Hex editing game files</a></li></ul>
+<dl><dd><small>Contains a quick introduction to using a most unlikely program to edit your game files, and suggestions on other editors out there.</small></dd></dl>
+<ul><li>A primer for the <a href="/index.php/Command_Prompt" title="Command Prompt">Command Prompt</a> (aka the command console).</li></ul>
+<dl><dd><small>Information on how to manage directories, files, plus other neat tricks that can be done through the command console that should not be forgotten in today's era of point and click madness.</small></dd></dl>
+<p><a rel="nofollow" class="external text" href="http://www.stonepool.com/xcom/hacking/index.html">Hatfarm / Chris Voss</a> and <a rel="nofollow" class="external text" href="http://www.daishiva.com/phpBB2/generic.php?page=progLinks.shtml">DaiShiva</a> (see <a rel="nofollow" class="external text" href="http://www.daishiva.com/programs/XCFormat.html">file formats</a>) also have notes on a number of XCOM's file formats not yet detailed on this wiki.
+</p>
+<div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" /><div class="toctitle" lang="en" dir="ltr"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#General_File_Information"><span class="tocnumber">1</span> <span class="toctext">General File Information</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Program_Files"><span class="tocnumber">1.1</span> <span class="toctext">Program Files</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Geoscape_Files"><span class="tocnumber">1.2</span> <span class="toctext">Geoscape Files</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Battlescape_Files"><span class="tocnumber">1.3</span> <span class="toctext">Battlescape Files</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Missdat_Files"><span class="tocnumber">1.4</span> <span class="toctext">Missdat Files</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-6"><a href="#File_Format_information"><span class="tocnumber">2</span> <span class="toctext">File Format information</span></a>
+<ul>
+<li class="toclevel-2 tocsection-7"><a href="#Graphics"><span class="tocnumber">2.1</span> <span class="toctext">Graphics</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-8"><a href="#Did_You_Know.3F"><span class="tocnumber">3</span> <span class="toctext">Did You Know?</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="#See_Also"><span class="tocnumber">4</span> <span class="toctext">See Also</span></a></li>
+</ul>
+</div>
+
+<h1><span class="mw-headline" id="General_File_Information">General File Information</span></h1>
+<h2><span class="mw-headline" id="Program_Files">Program Files</span></h2>
+<p>These are program files and static data files that are not part of the saved game files.
+</p>
+<table cellpadding="2" border="1" style="background: #E8E8E8; border:2px #696969 solid; border-collapse: collapse">
+<tbody><tr><th style="background: #c0c0c0; color:white">File</th><th style="background: #c0c0c0; color:white">Description</th>
+</tr><tr><td><a href="/index.php/GEODATA" title="GEODATA">GEODATA</a></td><td>Geoscape data. Includes localization strings, <a href="/index.php/OBDATA.DAT" title="OBDATA.DAT">OBDATA.DAT</a> for objects like weapons, <a href="/index.php/WORLD.DAT" title="WORLD.DAT">WORLD.DAT</a> for globe terrain.</td></tr>
+<tr><td><a href="/index.php/GEOGRAPH" title="GEOGRAPH">GEOGRAPH</a></td><td>Graphics for <a href="/index.php/UFOpaedia" title="UFOpaedia">UFOpaedia</a> and research screen backgrounds.</td></tr>
+<tr><td><a href="/index.php/MAPS" title="MAPS">MAPS</a></td><td>Pre-generated Battlescape terrain blocks (.MAP). These are filled in with terrain tiles. A few dozen blocks make up a battlescape.</td></tr>
+<tr><td><a href="/index.php/Saved_Game_Files#Missdat_Files" class="mw-redirect" title="Saved Game Files">MISSDAT</a></td><td>Holds the data from the previous mission. (Can be <a href="/index.php/ExploitsA#Score_Points_For_Free" title="ExploitsA">exploited</a>).</td></tr>
+<tr><td><a href="/index.php/ROUTES" title="ROUTES">ROUTES</a></td><td>Alien route maps (.RMP) for moving around the pre-generated Battlescape terrain blocks.</td></tr>
+<tr><td><a href="/index.php/SOUND" title="SOUND">SOUND</a></td><td>1990-era sound drivers, or MIDI files for Windows version.</td></tr>
+<tr><td><a href="/index.php/TERRAIN" title="TERRAIN">TERRAIN</a></td><td>Battlescape graphic tiles for buildings, ships, and terrain (.MCD, .PCK, and .TAB).</td></tr>
+<tr><td>UFO2EXE\<a href="/index.php/TACTICAL.EXE" title="TACTICAL.EXE">TACTICAL.EXE</a></td><td>The "Battlescape" program in DOS-release of UFO.</td></tr>
+<tr><td>UFOEXE\<a href="/index.php/GEOSCAPE.EXE" title="GEOSCAPE.EXE">GEOSCAPE.EXE</a></td><td>The "Geoscape" program that handles base management and aircraft.</td></tr>
+<tr><td>UFOEXE\BLACK.EXE</td><td>The black screen UFO.BAT puts up when swapping between the above two programs.</td></tr>
+<tr><td><a href="/index.php/UFOGRAPH" title="UFOGRAPH">UFOGRAPH</a></td><td>Misc graphics (.PCK) for soldier equipment screens, smoke, motion detector blobs.</td></tr>
+<tr><td><a href="/index.php/UFOINTRO" title="UFOINTRO">UFOINTRO</a></td><td>Holds the introduction movie (.FLI) and the endgame pictures (.LBM).</td></tr>
+<tr><td><a href="/index.php/UNITS" title="UNITS">UNITS</a></td><td>Battlescape graphics for soldiers, aliens, and the pixelated guns they hold. (.PCK and .TAB).</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Geoscape_Files">Geoscape Files</span></h2>
+<p>These are savegame files used by the <a href="/index.php/Geoscape" title="Geoscape">Geoscape</a> portion of the game. This can be considered a 'standard' save.
+</p>
+<table cellpadding="2" border="1" style="background: #E8E8E8; border:2px #696969 solid; border-collapse: collapse">
+<tbody><tr><th style="background: #c0c0c0; color:white">File</th><th style="background: #c0c0c0; color:white">Description</th>
+</tr><tr><td><a href="/index.php/ACTS.DAT" title="ACTS.DAT">ACTS.DAT</a></td><td>Contains information which acts with which priority in respective zones aliens are going to try.</td></tr>
+<tr><td><a href="/index.php/AKNOW.DAT" title="AKNOW.DAT">AKNOW.DAT</a></td><td></td></tr>
+<tr><td><a href="/index.php/ALIEN.DAT" title="ALIEN.DAT">ALIEN.DAT</a></td><td>Contains Alien activity in Countries and areas, for graphs.</td></tr>
+<tr><td><a href="/index.php/ASTORE.DAT" title="ASTORE.DAT">ASTORE.DAT</a></td><td>Has the info on aliens in <a href="/index.php/Alien_Containment" title="Alien Containment">Alien Containment</a>.</td></tr>
+<tr><td><a href="/index.php/BASE.DAT" title="BASE.DAT">BASE.DAT</a>&#160;<a href="/index.php/BASE.DAT_(TFTD)" title="BASE.DAT (TFTD)">(TFTD)</a></td><td>Has all of the <a href="/index.php/X-COM_Bases" title="X-COM Bases">base</a> layout and contents information, radar scanning abilities and other base information.</td></tr>
+<tr><td><a href="/index.php/BPROD.DAT" title="BPROD.DAT">BPROD.DAT</a>&#160;<a href="/index.php/BPROD.DAT_(TFTD)" title="BPROD.DAT (TFTD)">(TFTD)</a></td><td>List of <a href="/index.php/Equipment_(EU)" title="Equipment (EU)">equipment</a> being <a href="/index.php/Manufacturing" title="Manufacturing">produced</a>.</td></tr>
+<tr><td><a href="/index.php/CRAFT.DAT" title="CRAFT.DAT">CRAFT.DAT</a>&#160;<a href="/index.php/CRAFT.DAT_(TFTD)" title="CRAFT.DAT (TFTD)">(TFTD)</a></td><td>Has all the <a href="/index.php/Craft" title="Craft">craft</a> info, <a href="/index.php/Craft_Weapons" class="mw-redirect" title="Craft Weapons">weapons</a>, fuel, damage and items onboard. Also stores UFO information, although information is handled differently from friendly aircraft.</td></tr>
+<tr><td><a href="/index.php/DIPLOM.DAT" title="DIPLOM.DAT">DIPLOM.DAT</a></td><td>Diplomacy info, and current and historical <a href="/index.php/Country_Funding" class="mw-redirect" title="Country Funding">Country Funding</a>.</td></tr>
+<tr><td><a href="/index.php/DUM.BIN" title="DUM.BIN">DUM.BIN</a></td><td>Dummy file for keeping directory structure. Not used.</td></tr> 
+<tr><td><a href="/index.php/FACIL.DAT" title="FACIL.DAT">FACIL.DAT</a></td><td>Info on <a href="/index.php/Base_Facilities" class="mw-redirect" title="Base Facilities">Base Facilities</a> you can build.</td></tr>
+<tr><td><a href="/index.php/IGLOB.DAT" title="IGLOB.DAT">IGLOB.DAT</a></td><td>Date and time.</td></tr>
+<tr><td><a href="/index.php/INTER.DAT" title="INTER.DAT">INTER.DAT</a></td><td>Info on interception windows</td></tr>
+<tr><td><a href="/index.php/LEASE.DAT" title="LEASE.DAT">LEASE.DAT</a></td><td></td></tr>
+<tr><td><a href="/index.php/LIGLOB.DAT" title="LIGLOB.DAT">LIGLOB.DAT</a></td><td>Money! Also financial graph information.</td></tr>
+<tr><td><a href="/index.php/LOC.DAT" title="LOC.DAT">LOC.DAT</a></td><td>Location of bases on the planet as well as other things like ships, waypoints and missions. Basically anything that is an icon on the Geoscape world view.</td></tr>
+<tr><td><a href="/index.php/MISSIONS.DAT" title="MISSIONS.DAT">MISSIONS.DAT</a></td><td>Contains counters and race info on the ongoing alien acts.</td></tr>
+<tr><td><a href="/index.php/PRODUCT.DAT" title="PRODUCT.DAT">PRODUCT.DAT</a>&#160;<a href="/index.php/PRODUCT.DAT_(TFTD)" title="PRODUCT.DAT (TFTD)">(TFTD)</a></td><td>Info on things you can produce.</td></tr>
+<tr><td><a href="/index.php/PROJECT.DAT" title="PROJECT.DAT">PROJECT.DAT</a>&#160;<a href="/index.php/PROJECT.DAT_(TFTD)" title="PROJECT.DAT (TFTD)">(TFTD)</a></td><td>These are things you are <a href="/index.php/Research" title="Research">researching</a>.</td></tr>
+<tr><td><a href="/index.php/PURCHASE.DAT" title="PURCHASE.DAT">PURCHASE.DAT</a>&#160;<a href="/index.php/PURCHASE.DAT_(TFTD)" title="PURCHASE.DAT (TFTD)">(TFTD)</a></td><td>Info on stuff you can buy.</td></tr> 
+<tr><td><a href="/index.php/RESEARCH.DAT" title="RESEARCH.DAT">RESEARCH.DAT</a>&#160;<a href="/index.php/RESEARCH.DAT_(TFTD)" title="RESEARCH.DAT (TFTD)">(TFTD)</a></td><td>Completed research.</td></tr>
+<tr><td><a href="/index.php/SAVEINFO.DAT" title="SAVEINFO.DAT">SAVEINFO.DAT</a></td><td>Name of the saved game.</td></tr>
+<tr><td><a href="/index.php/SITE.DAT" title="SITE.DAT">SITE.DAT</a></td><td>List of recent Terror Sites.  (May be TFTD-only.)</td></tr>
+<tr><td><a href="/index.php/SOLDIER.DAT" title="SOLDIER.DAT">SOLDIER.DAT</a>&#160;<a href="/index.php/SOLDIER.DAT_(TFTD)" title="SOLDIER.DAT (TFTD)">(TFTD)</a></td><td>Data about the <a href="/index.php/Soldiers" title="Soldiers">soldiers</a>.</td></tr>
+<tr><td><a href="/index.php/TRANSFER.DAT" title="TRANSFER.DAT">TRANSFER.DAT</a></td><td>Personnel and equipment being transferred.</td></tr>
+<tr><td><a href="/index.php/UIGLOB.DAT" title="UIGLOB.DAT">UIGLOB.DAT</a></td><td>Holds the next numbers for <a href="/index.php/UFOs" title="UFOs">UFOs</a>, Terror Sites, <a href="/index.php/Interceptor" title="Interceptor">Interceptors</a>, etc. Also contains monthly scores for research.</td></tr>
+<tr><td><a href="/index.php/UP.DAT" title="UP.DAT">UP.DAT</a></td><td><a href="/index.php/UFOpaedia" title="UFOpaedia">UFOpaedia</a> info.</td></tr>
+<tr><td><a href="/index.php/XBASES.DAT" title="XBASES.DAT">XBASES.DAT</a></td><td>Schedules <a href="/index.php/Base_Defence" title="Base Defence">attacks on X-COM bases</a>.</td></tr>
+<tr><td><a href="/index.php/XCOM.DAT" class="mw-redirect" title="XCOM.DAT">XCOM.DAT</a></td><td>Contains X-Com activity in Countries and areas, for graphs.</td></tr>
+<tr><td><a href="/index.php/ZONAL.DAT" title="ZONAL.DAT">ZONAL.DAT</a></td><td>Information on which zones and with what priority aliens are going to attack.</td></tr></tbody></table>
+<p>(28 files. Note that if you find a geoscape save with additional files, this simply means a battlescape save was made in that slot at some prior point. UFO does not remove unused save files).
+</p>
+<h2><span class="mw-headline" id="Battlescape_Files">Battlescape Files</span></h2>
+<p>These are savegame files created and used by the tactical portion of the game. They are only created if the game is saved while in the battlescape. <a href="/index.php/Battlescape" title="Battlescape">Battlescape</a> saves also contain all the files used in a standard save. 
+</p>
+<table cellpadding="2" border="1" style="background: #E8E8E8; border:2px #696969 solid; border-collapse: collapse">
+<tbody><tr><th style="background: #c0c0c0; color:white">File</th><th style="background: #c0c0c0; color:white">Description</th>
+</tr><tr><td><a href="/index.php/BGLOB.DAT" title="BGLOB.DAT">BGLOB.DAT</a></td><td>Describes ambient light on map.</td></tr>
+<tr><td><a href="/index.php/GEODATA.DAT" title="GEODATA.DAT">GEODATA.DAT</a></td><td>Details the map type and overall map structure.</td></tr>
+<tr><td><a href="/index.php/MAP.DAT" title="MAP.DAT">MAP.DAT</a></td><td>Stores tile information for the whole map. Basically all static structures, such as trees, walls, floors and furniture.</td></tr>
+<tr><td><a href="/index.php/MISDATA.DAT" title="MISDATA.DAT">MISDATA.DAT</a></td><td>Contains information on craft in use and which alien artefacts are available for use in combat.</td></tr>
+<tr><td><a href="/index.php/OBPOS.DAT" title="OBPOS.DAT">OBPOS.DAT</a></td><td>Stores all the objects that your soldiers can pick up (guns, corpses, etc).</td></tr>
+<tr><td><a href="/index.php/ROUTES.DAT" title="ROUTES.DAT">ROUTES.DAT</a></td><td>Stores nodes for soldier and alien spawn points, also acts as waypoints for AI pathfinding.</td></tr>
+<tr><td><a href="/index.php/SEEMAP.DAT" title="SEEMAP.DAT">SEEMAP.DAT</a></td><td>Fog of war overlay.</td></tr>
+<tr><td><a href="/index.php/SMOKBIT.DAT" title="SMOKBIT.DAT">SMOKBIT.DAT</a></td><td>Smoke particles and fire patches on the map.</td></tr>
+<tr><td><a href="/index.php/SMOKREF.DAT" title="SMOKREF.DAT">SMOKREF.DAT</a></td><td>Smoke particles and fire patches on the map.</td></tr>
+<tr><td><a href="/index.php/SOURCEMP.DAT" title="SOURCEMP.DAT">SOURCEMP.DAT</a></td><td>Light source overlays for mobile light sources (i.e. your soldiers).</td></tr>
+<tr><td><a href="/index.php/TERMP.DAT" title="TERMP.DAT">TERMP.DAT</a></td><td>Light source overlays for ambient (or fixed) lighting.</td></tr>
+<tr><td><a href="/index.php/UNITPOS.DAT" title="UNITPOS.DAT">UNITPOS.DAT</a></td><td>Controls ownership, visibility, whether the unit is under temporary mind control, etc. Works hand in hand with <a href="/index.php/UNITREF.DAT" title="UNITREF.DAT">UNITREF.DAT</a>.</td></tr> 
+<tr><td><a href="/index.php/UNITREF.DAT" title="UNITREF.DAT">UNITREF.DAT</a></td><td>Contains the primary stats for all units in combat. X-Com owned soldiers in this file are <i>virtual</i> copies of the soldiers in soldier.dat. Works very closely with unitpos.dat.</td></tr>
+<tr><td><a href="/index.php/WGLOB.DAT" title="WGLOB.DAT">WGLOB.DAT</a></td><td>Battlescape map global information such as map dimensions and the number of turns that have elapsed.</td></tr></tbody></table>
+<p>(14 unique files, plus all 28 standard save files, totaling 42).
+</p>
+<h2><span class="mw-headline" id="Missdat_Files">Missdat Files</span></h2>
+<p>These temporary files are used at run time, when a battlescape game is in progress. The missdat folder also contains all the files needed to create a standard Geoscape save for the game in progress.
+</p><p>When the tactical game engine starts, it first checks <a href="/index.php/SAVEINFO.DAT" title="SAVEINFO.DAT">SAVEINFO.DAT</a> to see if this is a new battle, or if you're loading a battlescape save game. In the case of the former, it generates a new map, based off these files:
+</p>
+<ul><li><a href="/index.php/GEODATA.DAT" title="GEODATA.DAT">GEODATA.DAT</a></li>
+<li><a href="/index.php/MISSION.DAT" class="mw-redirect" title="MISSION.DAT">MISSION.DAT</a></li>
+<li><a href="/index.php/OBPOSREF.DAT" class="mw-redirect" title="OBPOSREF.DAT">OBPOSREF.DAT</a></li>
+<li><a href="/index.php/UNIPOS.DAT" class="mw-redirect" title="UNIPOS.DAT">UNIPOS.DAT</a></li>
+<li><a href="/index.php/UNIREF.DAT" class="mw-redirect" title="UNIREF.DAT">UNIREF.DAT</a></li></ul>
+<p>If you load a game, the tactical engine loads from the save slot directly, as according to <a href="/index.php/DIRECT.DAT" title="DIRECT.DAT">DIRECT.DAT</a> (which details the path to the slot in concern).
+</p><p>When combat ends, these files are created:
+</p>
+<ul><li><a href="/index.php/CODE.DAT" title="CODE.DAT">CODE.DAT</a></li>
+<li><a href="/index.php/MISSION2.DAT" class="mw-redirect" title="MISSION2.DAT">MISSION2.DAT</a></li>
+<li><a href="/index.php/OBPOS2.DAT" class="mw-redirect" title="OBPOS2.DAT">OBPOS2.DAT</a></li>
+<li><a href="/index.php/OPTION.DAT" title="OPTION.DAT">OPTION.DAT</a></li>
+<li><a href="/index.php/UNIREF2.DAT" class="mw-redirect" title="UNIREF2.DAT">UNIREF2.DAT</a></li>
+<li><a href="/index.php/UNITPOS.DAT_(MISSDAT)" class="mw-redirect" title="UNITPOS.DAT (MISSDAT)">UNITPOS.DAT</a></li></ul>
+<p>(12 unique files, plus 27 standard save files (does not use dum.bin), totaling 39).
+</p>
+<hr />
+<h1><span class="mw-headline" id="File_Format_information">File Format information</span></h1>
+<h2><span class="mw-headline" id="Graphics">Graphics</span></h2>
+<p>A list of specific image formats used by EU/TFTD. 
+</p>
+<table cellpadding="2" border="1" style="background: #E8E8E8; border:2px #696969 solid; border-collapse: collapse">
+<tbody><tr><th style="background: #c0c0c0; color:white">Extension</th><th style="background: #c0c0c0; color:white">Description</th>
+</tr><tr><td><a href="/index.php/Image_Formats#PCK" title="Image Formats">PCK</a></td><td>A run-length-encoded image format for storing one or more images with a dimension of 32x40 pixels. Used for sprites, tiles and inventory images. Usually accompanied by a TAB file, serving as an index to the image archive.</td></tr>
+<tr><td><a href="/index.php/Image_Formats#SCR_.26_DAT" title="Image Formats">SCR &amp; DAT</a></td><td>Stores uncompressed image data for the full screen backgrounds and the inventory screen icons.</td></tr>
+<tr><td><a href="/index.php/Image_Formats#SPK" title="Image Formats">SPK</a></td><td>Paper doll and UFOpedia images, among other full screen pictures.</td></tr>
+<tr><td><a href="/index.php/Image_Formats#BDY" title="Image Formats">BDY</a></td><td>Often used by TFTD in place of SPK.</td></tr>
+</tbody></table>
+<h1><span id="Did_You_Know?"></span><span class="mw-headline" id="Did_You_Know.3F">Did You Know?</span></h1>
+<ul><li>If your game crashes and you are returned to previous mission, the game is actually referring to the battlescape information in the MISSDAT directory. Also, if a tactical mission is abnormally aborted, the results are obtained from the MISSDAT folder as well. Because the game was not able to update the files that hold the results of the last mission, your current game will be updated with information from the <i>previous</i> mission that was able to end normally. Abnormal program termination simply means that the tactical game engine crashed or was forced to crash by the user. This <a href="/index.php/ExploitsA#Score_Points_For_Free" title="ExploitsA">can be abused</a>.</li></ul>
+<ul><li>Other exploits with gamefiles can be found <a href="/index.php/ExploitsF" class="mw-redirect" title="ExploitsF">here</a>.</li></ul>
+<h1><span class="mw-headline" id="See_Also">See Also</span></h1>
+<p><a href="/index.php/Game_editors" class="mw-redirect" title="Game editors">Game editors</a>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20231030194017
+Cache expiry: 86400
+Dynamic content: false
+Complications: []
+CPU time usage: 0.089 seconds
+Real time usage: 0.096 seconds
+Preprocessor visited node count: 182/1000000
+Post‐expand include size: 748/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   14.183      1 -total
+ 45.63%    6.471      4 Template:StdDescTable
+ 40.33%    5.720      8 Template:StdDescTable_Heading
+-->
+
+<!-- Saved in parser cache with key ufopaedia:pcache:idhash:1025-0!canonical and timestamp 20231030194017 and revision id 71519
+ -->
+</div></div><div class="printfooter">Retrieved from "<a dir="ltr" href="https://www.ufopaedia.org/index.php?title=Game_Files&amp;oldid=71519">https://www.ufopaedia.org/index.php?title=Game_Files&amp;oldid=71519</a>"</div>
+		<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="/index.php/Special:Categories" title="Special:Categories">Categories</a>: <ul><li><a href="/index.php/Category:Game_Files" title="Category:Game Files">Game Files</a></li><li><a href="/index.php/Category:Enemy_Unknown/UFO_Defense" title="Category:Enemy Unknown/UFO Defense">Enemy Unknown/UFO Defense</a></li><li><a href="/index.php/Category:TFTD" title="Category:TFTD">TFTD</a></li></ul></div></div>
+	</div>
+</div>
+
+<div id="mw-navigation">
+	<h2>Navigation menu</h2>
+	<div id="mw-head">
+		<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-personal" class="vector-menu" aria-labelledby="p-personal-label" role="navigation" 
+	 >
+	<h3 id="p-personal-label">
+		<span>Personal tools</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="vector-menu-content-list"><li id="pt-createaccount"><a href="/index.php?title=Special:CreateAccount&amp;returnto=Game+Files" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li><li id="pt-login"><a href="/index.php?title=Special:UserLogin&amp;returnto=Game+Files" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li></ul>
+		
+	</div>
+</nav>
+
+
+		<div id="left-navigation">
+			<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-namespaces" class="vector-menu vector-menu-tabs vectorTabs" aria-labelledby="p-namespaces-label" role="navigation" 
+	 >
+	<h3 id="p-namespaces-label">
+		<span>Namespaces</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="vector-menu-content-list"><li id="ca-nstab-main" class="selected"><a href="/index.php/Game_Files" title="View the content page [c]" accesskey="c">Page</a></li><li id="ca-talk"><a href="/index.php/Talk:Game_Files" rel="discussion" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li></ul>
+		
+	</div>
+</nav>
+
+
+			<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-variants" class="vector-menu-empty emptyPortlet vector-menu vector-menu-dropdown vectorMenu" aria-labelledby="p-variants-label" role="navigation" 
+	 >
+	<input type="checkbox" class="vector-menu-checkbox vectorMenuCheckbox" aria-labelledby="p-variants-label" />
+	<h3 id="p-variants-label">
+		<span>Variants</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="menu vector-menu-content-list"></ul>
+		
+	</div>
+</nav>
+
+
+		</div>
+		<div id="right-navigation">
+			<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-views" class="vector-menu vector-menu-tabs vectorTabs" aria-labelledby="p-views-label" role="navigation" 
+	 >
+	<h3 id="p-views-label">
+		<span>Views</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="vector-menu-content-list"><li id="ca-view" class="collapsible selected"><a href="/index.php/Game_Files">Read</a></li><li id="ca-viewsource" class="collapsible"><a href="/index.php?title=Game_Files&amp;action=edit" title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></li><li id="ca-history" class="collapsible"><a href="/index.php?title=Game_Files&amp;action=history" title="Past revisions of this page [h]" accesskey="h">View history</a></li></ul>
+		
+	</div>
+</nav>
+
+
+			<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-cactions" class="vector-menu-empty emptyPortlet vector-menu vector-menu-dropdown vectorMenu" aria-labelledby="p-cactions-label" role="navigation" 
+	 >
+	<input type="checkbox" class="vector-menu-checkbox vectorMenuCheckbox" aria-labelledby="p-cactions-label" />
+	<h3 id="p-cactions-label">
+		<span>More</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="menu vector-menu-content-list"></ul>
+		
+	</div>
+</nav>
+
+
+			<div id="p-search" role="search">
+	<h3 >
+		<label for="searchInput">Search</label>
+	</h3>
+	<form action="/index.php" id="searchform">
+		<div id="simpleSearch">
+			<input type="search" name="search" placeholder="Search UFOpaedia" title="Search UFOpaedia [f]" accesskey="f" id="searchInput"/>
+			<input type="hidden" name="title" value="Special:Search">
+			<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton"/>
+			<input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchButton" class="searchButton"/>
+		</div>
+	</form>
+</div>
+
+		</div>
+	</div>
+	
+<div id="mw-panel">
+	<div id="p-logo" role="banner">
+		<a  title="Visit the main page" class="mw-wiki-logo" href="/index.php/Main_Page"></a>
+	</div>
+	<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-Navigation" class="vector-menu vector-menu-portal portal portal-first" aria-labelledby="p-Navigation-label" role="navigation" 
+	 >
+	<h3 id="p-Navigation-label">
+		<span>Navigation</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="vector-menu-content-list"><li id="n-mainpage"><a href="/index.php/Main_Page" title="Visit the main page [z]" accesskey="z">Main Page</a></li><li id="n-portal"><a href="/index.php/UFOpaedia:Community_portal" title="About the project, what you can do, where to find things">Community portal</a></li><li id="n-recentchanges"><a href="/index.php/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li></ul>
+		
+	</div>
+</nav>
+
+
+	<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-Games" class="vector-menu vector-menu-portal portal" aria-labelledby="p-Games-label" role="navigation" 
+	 >
+	<h3 id="p-Games-label">
+		<span>Games</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="vector-menu-content-list"><li id="n-UFO:-Enemy-Unknown"><a href="/index.php/X-COM">UFO: Enemy Unknown</a></li><li id="n-Terror-From-The-Deep"><a href="/index.php/TFTD">Terror From The Deep</a></li><li id="n-Apocalypse"><a href="/index.php/Apocalypse">Apocalypse</a></li><li id="n-Enemy-Unknown"><a href="/index.php/Enemy_Unknown_(EU2012)">Enemy Unknown</a></li><li id="n-The-Bureau"><a href="/index.php/The_Bureau:_XCOM_Declassified">The Bureau</a></li><li id="n-XCOM-2"><a href="/index.php/XCOM2">XCOM 2</a></li><li id="n-Chimera-Squad"><a href="/index.php/Chimera_Squad">Chimera Squad</a></li></ul>
+		
+	</div>
+</nav>
+
+<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-Spiritual Successors" class="vector-menu vector-menu-portal portal" aria-labelledby="p-Spiritual Successors-label" role="navigation" 
+	 >
+	<h3 id="p-Spiritual Successors-label">
+		<span>Spiritual Successors</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="vector-menu-content-list"><li id="n-Phoenix-Point"><a href="http://wiki.phoenixpoint.com/Phoenix_Point_Wiki" rel="nofollow">Phoenix Point</a></li><li id="n-Xenonauts"><a href="https://www.xenonauts.com/" rel="nofollow">Xenonauts</a></li></ul>
+		
+	</div>
+</nav>
+
+<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-Featured Projects" class="vector-menu vector-menu-portal portal" aria-labelledby="p-Featured Projects-label" role="navigation" 
+	 >
+	<h3 id="p-Featured Projects-label">
+		<span>Featured Projects</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="vector-menu-content-list"><li id="n-UFO2000"><a href="/index.php/UFO2000">UFO2000</a></li><li id="n-OpenXcom"><a href="/index.php/OpenXcom">OpenXcom</a></li><li id="n-OpenApoc"><a href="/index.php/OpenApoc">OpenApoc</a></li><li id="n-UFO:AI"><a href="/index.php/UFO:AI">UFO:AI</a></li><li id="n-Long-War"><a href="/index.php/Long_War">Long War</a></li><li id="n-Long-War-2"><a href="/index.php/Long_War_2">Long War 2</a></li><li id="n-Other-Projects"><a href="/index.php/Other_Projects">Other Projects</a></li></ul>
+		
+	</div>
+</nav>
+
+<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-Forums" class="vector-menu vector-menu-portal portal" aria-labelledby="p-Forums-label" role="navigation" 
+	 >
+	<h3 id="p-Forums-label">
+		<span>Forums</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="vector-menu-content-list"><li id="n-Ufopaedia-forum"><a href="http://www.strategycore.co.uk/forums/forum/96-ufopaediaorg/" rel="nofollow">Ufopaedia forum</a></li><li id="n-2K.27s-XCOM-forums"><a href="http://forums.2kgames.com/forumdisplay.php?75-XCOM" rel="nofollow">2K's XCOM forums</a></li><li id="n-Reddit-X-COM"><a href="http://www.reddit.com/r/Xcom/" rel="nofollow">Reddit X-COM</a></li><li id="n-Discord-XCOM"><a href="https://discord.gg/tWTMxvU" rel="nofollow">Discord XCOM</a></li><li id="n-Other-Forums"><a href="/index.php/Forums">Other Forums</a></li></ul>
+		
+	</div>
+</nav>
+
+<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-Languages" class="vector-menu vector-menu-portal portal" aria-labelledby="p-Languages-label" role="navigation" 
+	 >
+	<h3 id="p-Languages-label">
+		<span>Languages</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="vector-menu-content-list"><li id="n-Espa.C3.B1ol-.28Spanish.29"><a href="/index.php/Pagina_Principal">Español (Spanish)</a></li><li id="n-.D0.A0.D1.83.D1.81.D1.81.D0.BA.D0.B8.D0.B9-.28Russian.29"><a href="/index.php/%D0%93%D0%BB%D0%B0%D0%B2%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0">Русский (Russian)</a></li><li id="n-Fran.C3.A7ais-.28French.29"><a href="/index.php/Page_Principale">Français (French)</a></li><li id="n-.ED.95.9C.EA.B5.AD.EC.96.B4-.28Korean.29"><a href="/index.php/%EB%A9%94%EC%9D%B8_%ED%8E%98%EC%9D%B4%EC%A7%80">한국어 (Korean)</a></li></ul>
+		
+	</div>
+</nav>
+
+<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-tb" class="vector-menu vector-menu-portal portal" aria-labelledby="p-tb-label" role="navigation" 
+	 >
+	<h3 id="p-tb-label">
+		<span>Tools</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="vector-menu-content-list"><li id="t-whatlinkshere"><a href="/index.php/Special:WhatLinksHere/Game_Files" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="/index.php/Special:RecentChangesLinked/Game_Files" rel="nofollow" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-specialpages"><a href="/index.php/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="javascript:print();" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="/index.php?title=Game_Files&amp;oldid=71519" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="/index.php?title=Game_Files&amp;action=info" title="More information about this page">Page information</a></li></ul>
+		
+	</div>
+</nav>
+
+
+	
+</div>
+
+</div>
+
+<footer id="footer" class="mw-footer" role="contentinfo" >
+	<ul id="footer-info" >
+		<li id="footer-info-lastmod"> This page was last edited on 21 March 2016, at 15:06.</li>
+	</ul>
+	<ul id="footer-places" >
+		<li id="footer-places-privacy"><a href="/index.php/UFOpaedia:Privacy_policy" title="UFOpaedia:Privacy policy">Privacy policy</a></li>
+		<li id="footer-places-about"><a href="/index.php/UFOpaedia:About" title="UFOpaedia:About">About UFOpaedia</a></li>
+		<li id="footer-places-disclaimer"><a href="/index.php/UFOpaedia:General_disclaimer" title="UFOpaedia:General disclaimer">Disclaimers</a></li>
+	</ul>
+	<ul id="footer-icons" class="noprint">
+		<li id="footer-poweredbyico"><a href="https://www.mediawiki.org/"><img src="/resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31" loading="lazy"/></a></li>
+	</ul>
+	<div style="clear: both;"></div>
+</footer>
+
+
+
+<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.089","walltime":"0.096","ppvisitednodes":{"value":182,"limit":1000000},"postexpandincludesize":{"value":748,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":0,"limit":5000000},"timingprofile":["100.00%   14.183      1 -total"," 45.63%    6.471      4 Template:StdDescTable"," 40.33%    5.720      8 Template:StdDescTable_Heading"]},"cachereport":{"timestamp":"20231030194017","ttl":86400,"transientcontent":false}}});mw.config.set({"wgBackendResponseTime":287});});</script></body><!-- Cached 20231030194017 -->
+</html>
