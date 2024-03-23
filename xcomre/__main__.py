@@ -18,28 +18,36 @@ from tabulate import tabulate
 import pandas as pd
 import numpy as np
 
-PROGNAME = "XComRE"
-VERSION = "0.1.1"
-AUTHOR = "Copyright (C) 2024, by Michael John"
-DESC = "A simple GUI for editing X-COM: UFO Defense (UFO: Enemy Unknown) save games."  # noqa: E501
+from xcomre import PROGNAME, VERSION, AUTHOR, DESC
+
+
+class CapitalisedHelpFormatter(argparse.HelpFormatter):
+    def add_usage(self, usage, actions, groups, prefix=None):
+        if prefix is None:
+            prefix = 'Usage: '
+        return super(CapitalisedHelpFormatter, self).add_usage(
+            usage, actions, groups, prefix)
 
 config = configparser.ConfigParser()
 
 def main():
-    parser = argparse.ArgumentParser(prog=PROGNAME, description=DESC)
-    parser.add_argument('-l', '--list', action='store_true', 
-        help='list game folders in use', required=False)
-    parser.add_argument('-g', '--game', dest='game', 
-        help='list a game folder\'s contents, i.e. `1` or `6`', type=str, required=False)
-    parser.add_argument('-c', dest='conffile', 
-        help='use custom configuration file', type=str, required=False)
-    parser.add_argument('-f', '--format', dest='format',
-        help='output format [tab (default)|pandas|json|csv]', type=str)
+    parser = argparse.ArgumentParser(prog=PROGNAME, description=DESC, add_help=True, formatter_class=CapitalisedHelpFormatter)
     parser.add_argument('-v', '--version', action='version', 
         version='%(prog)s ' + VERSION + ' ' + AUTHOR)
+    parser.add_argument('-l', '--list', action='store_true', 
+        help='list game folders in use', required=False)
+    parser.add_argument('--game', dest='game', choices=['XCOM', 'TFTD'],
+        help='choose a game [XCOM (default)|TFTD]', type=str, required=False)
+    parser.add_argument('--savegame', dest='savegame', 
+        help='list a game folder\'s contents, i.e. `1` or `6`', type=str, required=False)
+    parser.add_argument('--conffile', dest='conffile', 
+        help='use custom configuration file', type=str, required=False)
+    parser.add_argument('--format', dest='format',
+        help='output format [tab (default)|pandas|json|csv]', type=str)
 
     args = parser.parse_args()
-    # game = vars(args)["game"]
+    game = vars(args)["game"] or "XCOM"
+    savegame = vars(args)["savegame"]
     format = vars(args)["format"] or "tab"
     print(str(args).replace("Namespace", "Options"))
 
@@ -49,13 +57,13 @@ def main():
     else:
         config.read(os.path.join(os.path.dirname(__file__), "xcomre.conf"))
     # print(config.get("General", "game_path"))
-    print(config['General']['game_path'])
+    print(config[game]['game_path'])
 
     if vars(args)["list"]:
         list_files(format)
 
-    if vars(args)["game"]:
-        decode_files(vars(args)["game"], format)
+    if vars(args)["savegame"]:
+        decode_files(game, savegame, format)
 
 
 def list_files(format: str):
@@ -93,13 +101,16 @@ def list_files(format: str):
     #GeoscapeFilesTable.loc[GeoscapeFilesTable['File'] == 'TRANSFER.DAT', "Record Format"] = 'BBBBcB' 
 
     Mapping = pd.DataFrame({
-        'File': ['SAVEINFO.DAT', 'LIGLOB.DAT', 'LOC.DAT', 'TRANSFER.DAT'], 
-        'Record Format': ["H26sHHHHHH", 'i12i12i12i', 'bbHHHHHHbbI', 'BBBBcB'],
+        'File': ['ACTS.DAT', 'ASTORE.DAT', 'SAVEINFO.DAT', 'LIGLOB.DAT', 'LOC.DAT', 'TRANSFER.DAT'], 
+        'Record Format': ["7c", "bbb9B", "H26sHHHHHH", 'i12i12i12i', 'bbHHHHHHbbI', 'BBBBcB'],
         #'Description': [],
-        'Record Length': [40, 144, 20, 8],
-        'Total Records': [1, 1, 50, 100]
+        'Record Length': [7, 12, 40, 144, 20, 8],
+        'Total Records': [12, 50, 1, 1, 50, 100]
     })
-    Mapping['Record Length'] = Mapping['Record Length'].astype('int')
+    Mapping['Record Length'] = Mapping['Record Length'].astype('int8')
+    Mapping['Total Records'] = Mapping['Total Records'].astype('int')
+
+    print(Mapping.dtypes)
 
     #GeoscapeFilesTable.concat(Mapping)
     #GeoscapeFilesTable.join(Mapping)
@@ -113,17 +124,21 @@ def list_files(format: str):
 
     #GeoscapeFilesTable['Total Size']
     #GeoscapeFilesTable = GeoscapeFilesTable.assign(F = GeoscapeFilesTable['Record Length'] * 10)
-    GeoscapeFilesTable.loc[:, "Total Size"] = GeoscapeFilesTable['Record Length'] * 10
+    #GeoscapeFilesTable.loc[:, "Total Size"] = GeoscapeFilesTable['Record Length'] * GeoscapeFilesTable['Record Length']
     #GeoscapeFilesTable.loc[:, "Total Size"] = GeoscapeFilesTable['Record Length'] * GeoscapeFilesTable['Total Records']
     #GeoscapeFilesTable['Description'] = GeoscapeFilesTable['Description'].str.split('.')[0]
 
     #print(GeoscapeFilesTable.dtypes)
     #print(GeoscapeFilesTable)
 
+    GeoscapeFilesTable = GeoscapeFilesTable.loc[:, GeoscapeFilesTable.columns != 'Description']
+
     if format == "tab":
         print(tabulate(GeoscapeFilesTable, maxcolwidths=140, showindex=False, headers=GeoscapeFilesTable.columns, tablefmt='presto'))
     if format == "json":
         print(GeoscapeFilesTable.to_json(orient='values', index=None))
+    if format == "csv":
+        print(GeoscapeFilesTable.loc[:, GeoscapeFilesTable.columns != 'Description'].to_csv(index=None))
 
 facilities = {
     0x00: "Access Lift",
@@ -149,6 +164,19 @@ facilities = {
     0xFF: "Empty"
 }
 
+abbreviations = []
+
+# Iterate over the facility names
+for name in facilities.values():
+    #words = name.split()  # Split the facility name into words
+    #for word in words:
+    abbreviation = ''.join(filter(str.isupper, name))  # Extract uppercase letters
+    if abbreviation:  # Check if abbreviation is not empty
+        abbreviations.append(abbreviation)
+
+abbreviations = ['AL', 'LQ', 'LA', 'WS', 'SR', 'LR', 'MD', 'GS', 'AC', 'LD', 'PD', 'FB', 'GR', 'MS', 'PL', 'HD', 'HTL', 'HTR', 'HBL', 'HBR', '  ']
+abbreviations = ['AL', 'LQ', 'LA', 'WS', 'SR', 'LR', 'MD', 'GS', 'AC', 'LD', 'PD', 'FB', 'GR', 'MS', 'PL', 'HD', 'HA', 'HA', 'HA', 'HA', '  ']
+# print(abbreviations)
 # print(dict(map(lambda x: x.split(': '), facilities.split('\n'))))
 
 def read_records_from_binary_file(file_path, record_format, record_name, field_names):
@@ -165,16 +193,30 @@ def read_records_from_binary_file(file_path, record_format, record_name, field_n
             records.append(record)
     return records
 
-def decode_files(game_number):
+def decode_files(game, game_number, format):
     global config
 
     # Example usage:
     file_path = 'binary_data.dat'
-    file_path = config['General']['game_path'] + 'GAME_' + game_number + '/'
+    file_path = config[game]['game_path'] + 'GAME_' + game_number + '/'
 
     if not os.path.exists(file_path + 'SAVEINFO.DAT'):
         print(f"{file_path} does not exist!")
         return
+
+    file_name = 'ACTS.DAT'
+    record_format = '7c' 
+    records = read_records_from_binary_file(file_path + file_name, record_format, file_name, 
+        field_names=['Research', 'Harvest', 'Abduction', 'Infiltration', 'Base', 'Terror', 'Retaliation'])
+    print(records)
+
+    file_name = 'ASTORE.DAT'
+    record_format = 'bbb9s' 
+    records = read_records_from_binary_file(file_path + file_name, record_format, file_name, 
+        field_names=['Alien_race', 'Rank', 'Base', 'unclear'])
+    #for record in records:
+    #    print(record.Alien_race, record.Rank, record.Base)
+    print(records)
 
     file_name =  'BASE.DAT' # 'SOLDIER.DAT'
     record_format = '<16sHHH270s' # 292 Bytes gesamt
@@ -187,12 +229,23 @@ def decode_files(game_number):
         'facilities',
         'unused'])
     for record in records:
-        pass
+        print(record.BaseName.decode("utf-8"))
         #print(record.BaseName.decode("utf-8"),
         #    record.short_range_detection_capability, 
         #    record.long_range_detection_capability,
         #    record.hyperwave_detection_capability,
         #    record.facilities)
+
+        for i, facility in enumerate(record.facilities, 1):
+            if facility == 255:
+                print("  ", end=" ")
+            else:
+                print(abbreviations[facility], end=" ")
+            if i % 6 == 0:
+                print("")
+            else:
+                print("|", end=" ")
+
 
     file_name = 'SAVEINFO.DAT'
     record_format = 'H26sHHHHHH' 
@@ -208,7 +261,7 @@ def decode_files(game_number):
     fields += ['Balance_' + str(x) for x in range(1, 12 + 1)]
     records = read_records_from_binary_file(file_path + file_name, record_format, file_name, 
         field_names=fields)
-    # print(records)
+    print(records)
 
     file_name = 'LOC.DAT'
     record_format = 'bbHHHHHHbbI' 
@@ -234,13 +287,17 @@ def decode_files(game_number):
         field_names=[''])
     # print(records)"""
 
-def read_numpy_data():
+def read_numpy_data(game, game_number, format):
+    global config
 
-    """import numpy as np
+    import numpy as np
     import fnmatch
     import os
 
-    for file in os.listdir(file_path):
+    file_path = config[game]['game_path'] + 'GAME_' + game_number + '/'
+    # file_path = '/nvme/SteamLibrary/steamapps/common/XCom UFO Defense/XCOM/GAME_1/'
+
+    """for file in os.listdir(file_path):
         if fnmatch.fnmatch(file, 'GAME_', ):
             print(file)
 
@@ -253,9 +310,15 @@ def read_numpy_data():
             ('temp', float)])
 
         records = np.fromfile(file_path + file_name, dtype=dt)
-        print(records)"""
-    pass
+        """
+    file_name = 'IGLOB.DAT'
+    dt = np.dtype([('time', [('min', np.int32), ('sec', np.int32)]), ('temp', float)])
+    file_name = 'SAVEINFO.DAT'
+    dt = np.dtype([('time', [('min', np.int32), ('sec', np.int32)]), ('temp', float)])
+    records = np.fromfile(file_path + file_name, dtype=dt)
+    print(records)
 
 
 if __name__ == '__main__':
+    # read_numpy_data('XCOM', 1, '')
     main()
